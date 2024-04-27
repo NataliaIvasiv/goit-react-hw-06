@@ -4,11 +4,11 @@ import { nanoid } from 'nanoid'
 import { useSelector } from "react-redux";
 import { getContactFilter, getContacts } from '../../redux/selectors';
 
-const searchContacts = (contacts, filterValue) => {
-    const searchingContacts = contacts.filter(({ contact }) =>{
+const searchContacts = ({contacts}, filterValue) => {
+    return contacts.filter((contact) =>{
        return contact.name.toLowerCase().includes(filterValue.toLowerCase())}
     )
-    return searchingContacts;
+    
     
 }
 
